@@ -1,0 +1,25 @@
+// Source: http://www.spoj.com/problems/ADDREV/
+
+#include <iostream>
+using namespace std;
+
+int rev(int n){     // function to reverse the number
+	int r, sum=0;
+	while(n){
+		r=n%10;
+		n/=10;
+		sum=10*sum+r;
+	}
+	return sum;
+}
+ 
+int main() {
+	int n1, n2, N;
+	cin>>N;           // no of lines of input
+	while(N--)
+	{
+		cin>>n1>>n2;    // two inputs
+		cout<<rev(rev(n1)+rev(n2))<<endl;
+	}
+	return 0;
+}
