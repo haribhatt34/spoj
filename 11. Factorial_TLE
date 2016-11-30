@@ -1,0 +1,30 @@
+// Source: http://www.spoj.com/problems/FCTRL
+
+#include<iostream>
+using namespace std;
+int main()
+{
+  int noz=0, n, num;
+  scanf("%d",&n);
+  while(n--)
+  {
+  	scanf("%d",&num);
+    while(num>=5)
+    {
+    	int i = num;
+    	while(i>=5)
+    	{
+      		if(i%5==0)
+       		{
+       			i/=5;
+       			noz++;
+       		}
+       		else
+       			break;
+      	}
+      	num--;
+    }
+    printf("%d\n", noz);
+    noz=0;
+  }
+}
