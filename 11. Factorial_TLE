@@ -1,20 +1,24 @@
-// Source: http://www.spoj.com/problems/FCTRL
-
+/* Source: http://www.spoj.com/problems/FCTRL
+ * In C++, cin and cout handle all data types as a generic object and hence take more time to process.
+ * Hence, datatype specified in scanf and printf, cuz of which processing is reduce,d giving better time results, but still getting TLE :D
+ * my logic - find total factors(having value 5). 
+ */
+ 
 #include<iostream>
 using namespace std;
 int main()
 {
-  int noz=0, n, num;
+  int noz=0, n, num; // number of zeroes, no of input lines, individual elements(finding noz this no)
   scanf("%d",&n);
   while(n--)
   {
   	scanf("%d",&num);
-    while(num>=5)
+    while(num>=5) // loop until the number equal or is greater than 5
     {
     	int i = num;
     	while(i>=5)
     	{
-      		if(i%5==0)
+      		if(i%5==0) //if 5 is the factor, increment no. of zeroes & divide no by 5. 
        		{
        			i/=5;
        			noz++;
